@@ -23,12 +23,8 @@ public class TArbolTrie implements IArbolTrie {
             raiz.imprimir();
         }
     }
-
-    @Override
-    public int buscar(String palabra) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
     
+    @Override
     public Comparable buscarEtiqueta(String prefijo) {
         if(raiz!= null){
            TNodoTrie n= raiz.buscarNodoTrie(prefijo);
@@ -49,6 +45,7 @@ public class TArbolTrie implements IArbolTrie {
         
     }
     
+    @Override
     public LinkedList<Comparable> getEtiquetas(){
         LinkedList<Comparable> et = new LinkedList<>();
         if(raiz == null){
