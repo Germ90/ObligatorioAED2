@@ -3,21 +3,30 @@ package alasucu.Trie;
 
 import java.util.LinkedList;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
  *
- * @author ernesto
+ * @author German
  */
 public interface INodoTrie {
 
+    public Map<Comparable, TNodoTrie> getHijos();
+    
+    public boolean isEsPalabra();
+    
+    public void setEsPalabra(boolean esPalabra);
+    
+    public Comparable getEtiqueta();
+        
+    public void setEtiqueta(Comparable etiqueta);
+    
     void imprimir();
 
+    public LinkedList<Comparable> getEtiquetas();
+        
+    public TNodoTrie buscarNodoTrie(String s);
+    
     void insertar(String unId,String unaPalabra);
+    
     public void predecir(String prefijo, LinkedList<String> palabras);
     
 }
