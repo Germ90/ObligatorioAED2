@@ -85,11 +85,11 @@ public interface IVertice {
     public Double obtenerCostoAdyacencia(TVertice verticeDestino);
     
     /**
-     * Obtener todos los caminos de latdo menores o igual a cantEscalas entre this y verticeDestino
+     * Obtener todos los caminos de latdo menores o igual a largoMaxCamino, entre this y verticeDestino
      * @param etVertDestino Vertice final del camino solicitado
      * @param caminoPrevio Camino parcial. Recibe una lista vacia, que se va completando con el camino previo
      * @param todosLosCaminos Variable donde se van almacenando los caminos que fueron completados
-     * @param largoMaxCamino LArgo maximo posible de los caminos
+     * @param largoMaxCamino Largo maximo posible de los caminos
      * @return 
      */
     public TTodosLosVuelos todosLosCaminos(Comparable etVertDestino,TOpcionVuelo caminoPrevio,TTodosLosVuelos todosLosCaminos, int largoMaxCamino);
