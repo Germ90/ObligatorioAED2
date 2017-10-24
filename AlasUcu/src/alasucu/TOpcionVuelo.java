@@ -16,6 +16,10 @@ public class TOpcionVuelo {
     
     private double costoTotal;
     
+    /**
+    * Metodo que imprime por consola las etiquetas del camino.
+    *
+    */
     public void imprimirEtiquetas(){
         System.out.println(origen.getEtiqueta());
         otrosVertices.forEach((c) -> {
