@@ -22,10 +22,6 @@ public class TNodoTrie implements INodoTrie {
         return hijos;
     }
 
-    public void setHijos(Map<Comparable, TNodoTrie> hijos) {
-        this.hijos = hijos;
-    }
-
     public boolean isEsPalabra() {
         return esPalabra;
     }
@@ -109,20 +105,7 @@ public class TNodoTrie implements INodoTrie {
                 return null;
             }
         }
-       /* int i=0;
-        for(Map.Entry<Comparable,TNodoTrie> e : nodo.getHijos().entrySet()){
-            String indice = (s.equals(""))?"":Character.toString(s.charAt(i));
-            if(nodo.getHijos().containsKey(indice)){
-                nodo = nodo.getHijos().get(indice);
-                if((i+1)==s.length()){
-                    return nodo;
-                }
-            }else{
-                return null;
-            }
-            i++;
-        }*/
-
+       
         return null;
     }
      
