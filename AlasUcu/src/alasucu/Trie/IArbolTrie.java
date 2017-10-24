@@ -15,15 +15,16 @@ public interface IArbolTrie {
     */
     void imprimir();
     
-    /**
-    * 
-    *
-    * @param palabra Palabra a buscar en el trie
-    */
-    int buscar(String palabra);
 
+    /**
+    * Insertar una nueva palabra en el trie
+    *
+    * @param unId     Id de la palabra
+    * @param palabra  Palabra a insertar en el trie
+    */
     void insertar(String unId,String palabra);
 
+    
     LinkedList<String> predecir(String prefijo);
     
 }
