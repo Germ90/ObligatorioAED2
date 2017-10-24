@@ -25,6 +25,11 @@ public class TAerolinea {
         gd = new TGrafoDirigido(vertices);
     }
     
+    /**
+    * Obtener Id de Aerolinea
+    * 
+    * @return Id de la Aerolinea
+    */
     public Comparable getId() {
         return id;
     }
