@@ -34,10 +34,23 @@ public class TAerolinea {
         return id;
     }
 
+    /**
+    * Obtener Descripcion de Aerolinea
+    * 
+    * @return Descripcion de la Aerolinea
+    */
     public String getDescripcion() {
         return descripcion;
     }
     
+    /**
+    * Obtener todos los vuelos entre origen-destino con un maximo de cantEscalas
+    * 
+    * @param origen Identificador del vertice origen del vuelo
+    * @param destino Identificador del vertice destino del vuelo
+    * @param cantEscalas Cantidad maxima de escalas del vuelo
+    * @return Todos los vuelos entre origen-destino con un maximo de cantEscalas
+    */
     public TTodosLosVuelos todosLosVuelos(Comparable origen, Comparable destino,int cantEscalas){
         return this.gd.todosLosCaminos(origen, destino,cantEscalas);
     }
