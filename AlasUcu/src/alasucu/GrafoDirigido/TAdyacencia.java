@@ -14,16 +14,31 @@ public class TAdyacencia implements IAdyacencia {
 
     }
     
+   /**
+    * Operacion para obtener etiqueta de la Adyacencia.
+    *
+    * @return Etiqueta de la Adyacencia
+    */
     @Override
     public Comparable getEtiqueta() {
         return etiqueta;
     }
  
+   /**
+    * Operacion para obtener costo de la Adyacencia.
+    *
+    * @return Costo de la Adyacencia
+    */
     @Override
     public double getCosto() {
         return costo;
     }
 
+   /**
+    * Operacion para obtener vertice destino.
+    *
+    * @return Vertice Destino
+    */
     @Override
     public TVertice getDestino() {
         return destino;
