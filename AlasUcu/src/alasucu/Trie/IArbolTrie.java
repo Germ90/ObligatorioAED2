@@ -40,10 +40,10 @@ public interface IArbolTrie {
     */
     public Comparable buscarEtiqueta(String prefijo);
     
-     /**
+    /**
     * Listado de etiquetas de las palabras del trie.
     *
     * @return Lsita con las etiquetas de las palabras del trie
     */
-    public LinkedList<Comparable> getEtiquetas()
+    public LinkedList<Comparable> getEtiquetas();
 }

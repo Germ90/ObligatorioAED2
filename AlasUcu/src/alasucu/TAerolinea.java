@@ -5,9 +5,7 @@
  */
 package alasucu;
 
-import alasucu.GrafoDirigido.TAdyacencia;
 import alasucu.GrafoDirigido.TGrafoDirigido;
-import alasucu.GrafoDirigido.TVertice;
 import java.util.Map;
 
 /**
@@ -55,6 +53,12 @@ public class TAerolinea {
         return this.gd.todosLosCaminos(origen, destino,cantEscalas);
     }
     
+    /**
+     * Inserta un nuevo vuelo correspondiente a la Aerolinea
+     * @param origen Id aeropuerto origen
+     * @param destino Id aeropuerto destino
+     * @param costo Costo del vuelo
+     */
     public void insertarVuelo(Comparable origen,Comparable destino,String costo){
         gd.insertarArista(origen, destino, costo);
     }

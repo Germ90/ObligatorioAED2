@@ -2,6 +2,7 @@ package alasucu.Trie;
 
 
 import java.util.LinkedList;
+import java.util.Map;
 
 /**
  *
@@ -26,7 +27,7 @@ public interface INodoTrie {
     /**
     * Setear booleano esPalabra
     *
-    * @param valor a setear
+    * @param esPalabra a setear
     */
     public void setEsPalabra(boolean esPalabra);
     
@@ -40,7 +41,7 @@ public interface INodoTrie {
     /**
     * Setear etiqueta del nodo
     *
-    * @param Etiqueta a setear
+    * @param etiqueta a setear
     */
     public void setEtiqueta(Comparable etiqueta);
     
@@ -60,7 +61,7 @@ public interface INodoTrie {
     /**
     * Obtener nodo con la ultima letra del prefijo pasado como parametro
     *
-    * @param parcial del prefijo
+    * @param s del prefijo
     * @return Nodo con la ultima letra de la cadena s
     */
     public TNodoTrie buscarNodoTrie(String s);
@@ -69,7 +70,7 @@ public interface INodoTrie {
     * Insertar una nueva palabra en el trie
     *
     * @param unId     Id de la palabra
-    * @param palabra  Palabra a insertar en el trie
+    * @param unaPalabra  Palabra a insertar en el trie
     */
     void insertar(String unId,String unaPalabra);
     
@@ -77,7 +78,7 @@ public interface INodoTrie {
     * Listado de palabras que comienzan con el parametro recibido.
     *
     * @param prefijo prefijo a buscar
-    * @return Lsita con las palabras que comienzan con prefijo
+    * @param palabras Lista con las palabras conmenzadas con prefijo
     */
     public void predecir(String prefijo, LinkedList<String> palabras);
     

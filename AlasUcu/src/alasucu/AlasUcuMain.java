@@ -2,12 +2,12 @@ package alasucu;
 
 
 import alasucu.Trie.TArbolTrie;
+import com.sun.xml.internal.ws.util.StringUtils;
 import java.util.LinkedList;
 import javax.swing.DefaultListModel;
 import javax.swing.JList;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
-
 
 
 /*
@@ -65,7 +65,7 @@ public class AlasUcuMain extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("Seleccione una Aerolinea:");
+        jLabel1.setText("Lista de Aerolineas Disponibles:");
 
         jtfSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -98,9 +98,9 @@ public class AlasUcuMain extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setText("Seleccione Origen");
+        jLabel3.setText("Seleccione Aeropuerto Origen");
 
-        jLabel4.setText("Seleccione Destino");
+        jLabel4.setText("Seleccione Aeropuerto Destino");
 
         btnTodasAerolineas.setLabel("Todas las Aerolineas");
         btnTodasAerolineas.addActionListener(new java.awt.event.ActionListener() {
@@ -169,9 +169,8 @@ public class AlasUcuMain extends javax.swing.JFrame {
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 147, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(fieldEscalas, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(label1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(fieldEscalas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnTodasAerolineas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
@@ -203,8 +202,11 @@ public class AlasUcuMain extends javax.swing.JFrame {
         
         String aeropuerto2 = jListAeropuertos2.getSelectedValue().toString();
         String codAeropuerto2 = facade.getTrieAeropuertos().buscarEtiqueta(aeropuerto2).toString();
-        
-        new MejoresTodasLasAerolineas(aeropuerto1,codAeropuerto1,aeropuerto2,codAeropuerto2,Integer.parseInt(fieldEscalas.getText())).setVisible(true);
+        Integer escalas =1;
+        if(!fieldEscalas.getText().equals("")){
+            escalas = Integer.parseInt(fieldEscalas.getText());
+        }
+        new MejoresTodasLasAerolineas(aeropuerto1,codAeropuerto1,aeropuerto2,codAeropuerto2,escalas).setVisible(true);
     }//GEN-LAST:event_btnTodasAerolineasActionPerformed
 
     private void iniciarBusqueda(JList lista,TArbolTrie arbol,JTextField tfield){

@@ -1,21 +1,14 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package alasucu;
 
 import alasucu.Utiles.ManejadorArchivosGenerico;
-import alasucu.GrafoDirigido.TGrafoDirigido;
-import alasucu.GrafoDirigido.TVertice;
 import alasucu.Trie.TArbolTrie;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Map;
 
 /**
- *
+ * SINGLETON - Clase manejadora de vuelos. Encapsula la logica del programa
  * @author German
  */
 public class FacadeAlasUcu {
@@ -41,12 +34,17 @@ public class FacadeAlasUcu {
     }
     
     /**
-     * @return the aerolineas
+     * @return coleccion de aerolineas
      */
     public Map<Comparable, TAerolinea> getAerolineas(){
         return aerolineas;
     }
     
+    /**
+     * Inserta una nueva aerolinea a la facade
+     * @param aero nueva aerolinea
+     * @return 
+     */
     public boolean insertarAerolinea(TAerolinea aero){
         if(!aerolineas.containsKey(aero.getId())){
             aerolineas.put(aero.getId(),aero);
@@ -133,16 +131,9 @@ public class FacadeAlasUcu {
         return vuelos;
     }*/
     
-    public TOpcionVuelo vueloOptimo(TTodosLosVuelos vuelos,int escalas){
-        TOpcionVuelo vueloOpt=null;
-        double minCosto = Integer.MAX_VALUE;
-        for(TOpcionVuelo v:vuelos.getCaminos()){
-            if(v.getCosto()<minCosto && (v.getOtrosVertices().size()<=escalas || escalas==0)){
-                vueloOpt=v;
-                minCosto=v.getCosto();
-            }
-        }
-        return vueloOpt;
+    public TOpcionVuelo vueloOptimo(TTodosLosVuelos vuelos){
+
+        return vuelos.vueloOptimo();
     }
     
     public TOpcionVuelo vueloOptimo(LinkedList<DataVuelo> vuelos,int escalas){
@@ -170,7 +161,7 @@ public class FacadeAlasUcu {
         for (Map.Entry<Comparable,TAerolinea> eAerolineas : this.aerolineas.entrySet()){
             
             TTodosLosVuelos optimos=eAerolineas.getValue().todosLosVuelos(origen, destino,escalas); 
-            TOpcionVuelo vuelo = vueloOptimo(optimos,escalas);
+            TOpcionVuelo vuelo = vueloOptimo(optimos);
             if(vuelo!=null){
                 todos_optimos.add(new DataVuelo(eAerolineas.getKey(),vuelo));
             }

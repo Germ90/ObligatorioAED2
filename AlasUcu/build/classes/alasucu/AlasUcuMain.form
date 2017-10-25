@@ -90,10 +90,8 @@
               </Group>
               <EmptySpace pref="22" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="103" groupAlignment="1" attributes="0">
-                      <Component id="fieldEscalas" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="label1" alignment="0" min="-2" max="-2" attributes="0"/>
-                  </Group>
+                  <Component id="fieldEscalas" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="label1" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Component id="btnTodasAerolineas" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -104,7 +102,7 @@
   <SubComponents>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Seleccione una Aerolinea:"/>
+        <Property name="text" type="java.lang.String" value="Lista de Aerolineas Disponibles:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jtfSearch">
@@ -174,12 +172,12 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel3">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Seleccione Origen"/>
+        <Property name="text" type="java.lang.String" value="Seleccione Aeropuerto Origen"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel4">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Seleccione Destino"/>
+        <Property name="text" type="java.lang.String" value="Seleccione Aeropuerto Destino"/>
       </Properties>
     </Component>
     <Component class="java.awt.Button" name="btnTodasAerolineas">

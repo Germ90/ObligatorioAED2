@@ -17,7 +17,6 @@ import java.util.TreeMap;
 public class TGrafoDirigido implements IGrafoDirigido {
 
     private Map<Comparable, TVertice> vertices; // vertices del grafo.-
-    private LinkedList<Comparable> lista; //para floyd
     
     
     public TGrafoDirigido(Collection<TVertice> vertices, Collection<TArista> aristas, Collection<TAerolinea> aerolineas) {
